@@ -14,23 +14,19 @@ class Scheduler:
         self.job_func = None
     
     def start(self, interval_minutes, job_func):
-        """Запуск планировщика"""
         if not self.running:
             self.job_func = job_func
-            
             self.scheduler.add_job(
                 job_func,
                 trigger=IntervalTrigger(minutes=interval_minutes),
                 id='check_books',
                 next_run_time=datetime.now()
             )
-            
             self.scheduler.start()
             self.running = True
             logger.info(f"✅ Планировщик запущен (интервал: {interval_minutes} мин)")
     
     def stop(self):
-        """Остановка планировщика"""
         if self.running:
             self.scheduler.shutdown(wait=False)
             self.running = False
