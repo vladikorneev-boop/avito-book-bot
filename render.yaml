@@ -2,7 +2,7 @@ services:
   - type: web
     name: avito-book-bot
     env: python
-    buildCommand: pip install --no-build-isolation -r requirements.txt
+    buildCommand: pip install --no-deps -r requirements.txt
     startCommand: python app.py
     envVars:
       - key: BOT_TOKEN
@@ -11,5 +11,3 @@ services:
         sync: false
       - key: DATABASE_URL
         sync: false
-      - key: PIP_NO_BINARY
-        value: :all:
