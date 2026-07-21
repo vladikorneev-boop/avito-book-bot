@@ -1,9 +1,10 @@
 aiogram==2.25.1
 beautifulsoup4==4.12.2
-lxml==4.9.3
+lxml==4.9.3 --only-binary :all:
 apscheduler==3.10.4
 sqlalchemy==2.0.23
 aiosqlite==0.19.0
 python-dotenv==1.0.0
 requests==2.31.0
 flask==2.3.2
+aiohttp==3.8.6 --only-binary :all:
