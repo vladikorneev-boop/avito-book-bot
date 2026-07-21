@@ -66,6 +66,7 @@ class AvitoParser:
         return books[:limit]
     
     def _parse_books(self, html, city_display):
+        # Используем встроенный парсер (не требует lxml)
         soup = BeautifulSoup(html, 'html.parser')
         books = []
         
